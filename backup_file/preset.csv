@@ -1,0 +1,10 @@
+Preset Parameter,
+Type number,1
+Enable Cut,enable
+Number of Cut,23
+Number of Cap. Measurement,12
+Number of IV Measurement,11
+Distance from CB Original Point to First sample [mm],10
+Distance between sample [mm],40
+Measurement Z-axis moving distance [mm],10
+Measurement Z-axis moving speed [mm/sec],1
