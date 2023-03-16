@@ -5,75 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width", initial-scale="1.0">
   
-  <title>Recipe Edit</title>
+  <title>Sample Type</title>
   
   <link href="/style.css" rel="stylesheet" type="text/css">
   <script src="recipe.js"></script>
 
 </head> 
-
 <body onload="GetFileListing()">
   <div class="container">
-    <header><h2>Load Recipe</h2></header>
-
+   
     <form id="log" action ="index.html" onsubmit="return DataSubmitted()">
 
       <div class="row">
         <div class="col-25">
-          <label for="fname"><h2> Reference Recipe </h2></label>
+          <label for="Sname"><h2> Sample type </h2></label>
              </div>
              <div class="col-25">
                 <button class="button button1"> <h2> Load </h2></button>
              </div>
              <div class="col-50">
-              <select name="Ref_recipe" id="Ref_recipe"> 
-              <option value="" selected disabled> Select a file... </option>
+              <select name="Sample_type" id="Sample_type"> 
+              <option value="" selected disabled >  Choose a sample type... </option>
               </select> 
               </div>
-              
-      </div>
-      <div class="row">
-        <div class="col-75">
-          <label for="Ref_name"> <h2> Refrence Name </h2></label>
-          <input type="text" id="Ref_name" name="Ref_name"  placeholder="Refrence name.." style="width: 65%;">
-          
-          </div>
-        
-      </div>
-
-      <div class="row">
-        <div class="col-75">
-          <label for="Editor_name"><h2> Name</h2></label>
-          <input type="text" id="Editor_name" name="Editor_name" placeholder="Editor name..">
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-25">
-          <label for="Mode"><h2>Mode Select</h2></label>
-        </div> 
-      
-          <div class="col-75">
-          <select name="Mode" id="Mode">
-            <optgroup>
-            <option value="" selected disabled hidden>Select a process</option>
-            <option value="1">All Process</option>
-            <option value="2">All Formation Process</option>
-            <option value="3">All Measurement Process</option>
-            <option value="4">Cap. Measurement</option>
-            <option value="5">I-V Measurment</option>
-            <option value="6">Formation Only</option>
-            </optgroup>
-          </select>
-          </div> 
-      </div>
-
-          
-      <div class="row">
-        <div class="col-75"></div>
-        <input type="submit" value="submit">
-       
+         
            
     </form>
     
