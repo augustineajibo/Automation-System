@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const csvResult = require('./readCSV')
 
 const app = express();
 const port = 8002;
@@ -13,20 +14,14 @@ app.get('/recipe.js', function (req, res) {
     res.sendFile('recipe.js', {root: __dirname});
 })
 
-app.get('/recipes', function (req, res) {
-    console.log("received a recipes request")
-    fs.readdir("backup_file", (err, files) => {
-        if (err) {
-            console.log(err)
-            res.send("An error ocurred.")
-        } else {
-            // if (path.extname(file) == ".csv")
-            console.log("processed the recipes request")
-            res.send(JSON.stringify(
-                files.filter(file => path.extname(file) == ".csv")
-            ))
-        }
-    })
+app.get('/recipes', async function (req, res) {
+    try {
+    const foundCvsResult = await csvResult.convertCsvToJson()
+    return res.status(201).json(foundCvsResult)
+    } catch (error) {
+        console.trace(error)
+        throw new Error("No csv result found", error)
+    }
 })
 app.post('/', function(req,res,next){
 

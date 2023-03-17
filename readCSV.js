@@ -1,10 +1,20 @@
-const fs = require("fs");
-const { parse } = require("csv-parse");
+const CSVToJSON = require('csvtojson')
+const path =  require('path')
 
-fs.createReadStream("./preset.csv")
-  .pipe(parse({ delimiter: ",", from_line: 2 }))
-  .on("data", function (row) {
-    console.log(row);
-  })
+const csvFilePath = path.join(__dirname, '../Automation-System/backup_file/preset.csv')
+const convertCsvToJson = async () => {
+  try {
+    const results = await CSVToJSON().fromFile(csvFilePath)
 
-  
+    return results;
+
+  } catch (error) {
+    console.log(error)
+
+  }
+}
+
+
+module.exports = {
+  convertCsvToJson,
+}
